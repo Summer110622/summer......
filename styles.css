@@ -1,0 +1,156 @@
+/* styles.css */
+
+/* ヘッダーのスタイルを指定 */
+header {
+    background-color: #808080; /* 灰色 */
+    padding: 20px; /* ヘッダーの内側の余白 */
+    color: white; /* テキストの色を白に設定 */
+    display: flex; /* Flexbox を使用して要素を配置 */
+    align-items: center; /* 要素を垂直方向に中央揃え */
+}
+
+footer {
+    background-color: #808080; /* 灰色 */
+    padding: 10px; /* フッターの内側の余白 */
+    color: white; /* テキストの色を白に設定 */
+    text-align: center; /* テキストを中央揃えに */
+}
+
+/* アイコン画像のスタイルを指定 */
+.icon {
+    width: 50px; /* アイコン画像の幅 */
+    height: auto; /* アイコン画像の高さを自動調整 */
+    margin-right: 10px; /* アイコン画像とヘッダーテキストの間の余白 */
+}
+.list-2 {
+    list-style-type: none;
+    padding: 1em;
+    border: 2px solid #808080;
+    counter-reset: li;
+}
+
+.list-2 li {
+    display: flex;
+    align-items: center;
+    padding: .3em;
+}
+
+.list-2 li::before {
+    display: inline-block;
+    min-width: 1.7em;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: #808080;
+    color: #fff;
+    font-weight: bold;
+    font-size: .75em;
+    line-height: 1.7em;
+    text-align: center;
+    content: counter(li);
+    counter-increment: li;
+}
+.loading-15 {
+    position: absolute;
+    right: 60px; /* 右端から10pxの余白 */
+    transform-style: preserve-3d;
+    animation: animation-loading-15 3s infinite forwards;
+}
+
+.loading-15 span {
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #2589d0;
+    background-color: #fff;
+}
+
+.loading-15 span:nth-of-type(1) {
+    transform: translateZ(24px);
+}
+
+.loading-15 span:nth-of-type(2) {
+    transform: rotateY(180deg) translateZ(24px);
+}
+
+.loading-15 span:nth-of-type(3) {
+    transform: rotateY(-90deg) translateZ(24px);
+}
+
+.loading-15 span:nth-of-type(4) {
+    transform: rotateY(90deg) translateZ(24px);
+}
+
+.loading-15 span:nth-of-type(5) {
+    transform: rotateX(-90deg) translateZ(24px)
+}
+
+.loading-15 span:nth-of-type(6) {
+    transform: rotateX(90deg) translateZ(24px);
+}
+
+@keyframes animation-loading-15 {
+    0% {
+        transform: rotateY(0deg) rotateZ(0deg);
+    }
+    20% {
+        transform: rotateY(90deg) rotateZ(0deg);
+    }
+    40% {
+        transform: rotateX(45deg) rotateZ(45deg);
+    }
+    60% {
+        transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);
+    }
+    80% {
+        transform: rotateX(310deg) rotateZ(230deg)
+    }
+    100% {
+        transform: rotateX(360deg) rotateZ(360deg)
+    }
+}
+.box-006 {
+    display: flex;
+    grid-gap: 0 .7em;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #fff9e5;
+    color: #333333;
+}
+
+.box-006::before {
+    width: 24px;
+    height: 24px;
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.8995 6.85453L17.1421 11.0972L7.24264 20.9967H3V16.754L12.8995 6.85453ZM14.3137 5.44032L16.435 3.319C16.8256 2.92848 17.4587 2.92848 17.8492 3.319L20.6777 6.14743C21.0682 6.53795 21.0682 7.17112 20.6777 7.56164L18.5563 9.68296L14.3137 5.44032Z' fill='%23ffb36b'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.box-006 p {
+    margin: 0;
+    padding: 0 0 0 .7em;
+    border-left: 1px solid #ffb36b;
+}
+/* スマートフォン用のスタイル */
+@media only screen and (max-width: 600px) {
+    /* ヘッダー */
+    header {
+        text-align: center;
+    }
+    .icon {
+        display: block;
+        margin: 0 auto;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    /* メインコンテンツ */
+    .box-006 {
+        padding: 10px;
+    }
+    /* フッター */
+    footer {
+        text-align: center;
+    }
+}
