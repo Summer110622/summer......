@@ -1,190 +1,129 @@
-/* styles.css */
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* ヘッダーのスタイルを指定 */
+/* Global styles */
+body {
+  font-family: 'Russo One', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
 header {
-    background-color: #808080; /* 灰色 */
-    padding: 20px; /* ヘッダーの内側の余白 */
-    color: white; /* テキストの色を白に設定 */
-    display: flex; /* Flexbox を使用して要素を配置 */
-    align-items: center; /* 要素を垂直方向に中央揃え */
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e67e22;
+}
+
+/* Hero section styles */
+.hero {
+  background-image: url('https://media.discordapp.net/attachments/1180795061273890847/1215562033664106506/2024-03-08_16.29.02.png?ex=65fd335c&is=65eabe5c&hm=062d8f6f2c8fb47d9d6b6a381c92ed0388aa8c793c7c3150e94eb8bc37bd1d44&=&format=webp&quality=lossless&width=720&height=405');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #e67e22;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d35400;
+}
+
+/* Features section styles */
+.features {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.features .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature {
+  text-align: center;
+  max-width: 300px;
+}
+
+.feature img {
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
 footer {
-    background-color: #808080; /* 灰色 */
-    padding: 10px; /* フッターの内側の余白 */
-    color: white; /* テキストの色を白に設定 */
-    text-align: center; /* テキストを中央揃えに */
-}
-
-/* アイコン画像のスタイルを指定 */
-.icon {
-    width: 50px; /* アイコン画像の幅 */
-    height: auto; /* アイコン画像の高さを自動調整 */
-    margin-right: 10px; /* アイコン画像とヘッダーテキストの間の余白 */
-}
-.list-2 {
-    list-style-type: none;
-    padding: 1em;
-    border: 2px solid #808080;
-    counter-reset: li;
-}
-
-.list-2 li {
-    display: flex;
-    align-items: center;
-    padding: .3em;
-}
-
-.list-2 li::before {
-    display: inline-block;
-    min-width: 1.7em;
-    margin-right: 5px;
-    border-radius: 50%;
-    background-color: #808080;
-    color: #fff;
-    font-weight: bold;
-    font-size: .75em;
-    line-height: 1.7em;
-    text-align: center;
-    content: counter(li);
-    counter-increment: li;
-}
-.loading-15 {
-    position: absolute;
-    right: 60px; /* 右端から10pxの余白 */
-    transform-style: preserve-3d;
-    animation: animation-loading-15 3s infinite forwards;
-}
-
-.loading-15 span {
-    position: absolute;
-    top: -24px;
-    left: -24px;
-    width: 48px;
-    height: 48px;
-    border: 1px solid #2589d0;
-    background-color: #fff;
-}
-
-.loading-15 span:nth-of-type(1) {
-    transform: translateZ(24px);
-}
-
-.loading-15 span:nth-of-type(2) {
-    transform: rotateY(180deg) translateZ(24px);
-}
-
-.loading-15 span:nth-of-type(3) {
-    transform: rotateY(-90deg) translateZ(24px);
-}
-
-.loading-15 span:nth-of-type(4) {
-    transform: rotateY(90deg) translateZ(24px);
-}
-
-.loading-15 span:nth-of-type(5) {
-    transform: rotateX(-90deg) translateZ(24px)
-}
-
-.loading-15 span:nth-of-type(6) {
-    transform: rotateX(90deg) translateZ(24px);
-}
-
-@keyframes animation-loading-15 {
-    0% {
-        transform: rotateY(0deg) rotateZ(0deg);
-    }
-    20% {
-        transform: rotateY(90deg) rotateZ(0deg);
-    }
-    40% {
-        transform: rotateX(45deg) rotateZ(45deg);
-    }
-    60% {
-        transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);
-    }
-    80% {
-        transform: rotateX(310deg) rotateZ(230deg)
-    }
-    100% {
-        transform: rotateX(360deg) rotateZ(360deg)
-    }
-}
-.box-006 {
-    display: flex;
-    grid-gap: 0 .7em;
-    margin: 0 auto;
-    padding: 1em;
-    border-radius: 5px;
-    background-color: #fff9e5;
-    color: #333333;
-}
-
-.box-006::before {
-    width: 24px;
-    height: 24px;
-    content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.8995 6.85453L17.1421 11.0972L7.24264 20.9967H3V16.754L12.8995 6.85453ZM14.3137 5.44032L16.435 3.319C16.8256 2.92848 17.4587 2.92848 17.8492 3.319L20.6777 6.14743C21.0682 6.53795 21.0682 7.17112 20.6777 7.56164L18.5563 9.68296L14.3137 5.44032Z' fill='%23ffb36b'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.box-006 p {
-    margin: 0;
-    padding: 0 0 0 .7em;
-    border-left: 1px solid #ffb36b;
-}
-/* スマートフォン用のスタイル */
-@media only screen and (max-width: 600px) {
-    /* ヘッダー */
-    header {
-        text-align: center;
-    }
-    .icon {
-        display: block;
-        margin: 0 auto;
-    }
-    h1 {
-        font-size: 1.5em;
-    }
-    /* メインコンテンツ */
-    .box-006 {
-        padding: 10px;
-    }
-    /* フッター */
-    footer {
-        text-align: center;
-    }
-}
-.quote-4 {
-    max-width: 500px;
-    position: relative;
-    padding: 1em 1.5em 1em 1em;
-    border: 2px solid #808080;
-    border-left-width: 3.5em;
-    border-radius: 3px;
-}
-
-.quote-4::after {
-    position: absolute;
-    top: 0;
-    left: -3.5em;
-    width: 3.5em;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E") no-repeat center / 2em;
-    content: '';
-}
-
-.quote-4 p {
-    margin-top: 0;
-}
-
-.quote-4 cite {
-    display: block;
-    color: #808080;
-    font-size: .8em;
-    text-align: right;
-}
-.icon2 {
-    width: 300px; /* アイコン画像の幅 */
-    height: auto; /* アイコン画像の高さを自動調整 */
-    margin-right: 10px; /* アイコン画像とヘッダーテキストの間の余白 */
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
